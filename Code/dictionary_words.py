@@ -1,9 +1,7 @@
 from random import choice
 from sys import argv
-from utils import time_it
 
 
-@time_it
 def load_words(amount):
     # ? ------- [VESRION 1 (FASTER)] -------
     # with open('/usr/share/dict/words', 'r') as file:
