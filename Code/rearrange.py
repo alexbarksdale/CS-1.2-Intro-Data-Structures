@@ -17,15 +17,13 @@ def rearrange_word(input):
         # Picks a random index from 0 to word
         arranged = randint(0, word)
 
-        # Swaps un_arranged[word] with the element at a randoom index
-
+        # Swaps un_arranged[word] with the element at a random index
         un_arranged[word], un_arranged[arranged] = un_arranged[arranged], un_arranged[word]
 
     return un_arranged
 
 
-if __name__ == '__main__':
-    # Slices from the first(int) argument until the end(':')
-    args = argv[1:]
-    arranged_words = rearrange_word(args)
-    print(arranged_words)
+# Slices from the first(int) argument until the end(':')
+args = argv[1:]
+arranged_words = rearrange_word(args)
+print(arranged_words)
