@@ -1,11 +1,7 @@
 from random import choice, randrange
 from sys import argv
-from utils import time_it
-
-# Todo: Check for repeats
 
 
-@time_it
 def load_words(word_file, amount):
 
     # ? ------- [VESRION 1] -------
