@@ -16,11 +16,7 @@ def load_words(word_file, amount):
     with open(word_file, 'r') as file:
 
         word = file.read().split()
-        # random_word = []
-
-        # for x in range(int(amount)):
-        #     random_word.append(choice(word))
-
+        # 'for x...' runs first. It loops through and runs 'choice(word)' then assigns the value to 'random_word'.
         random_word = [choice(word) for x in range(int(amount))]
 
         return ' '.join(random_word) + '.'
