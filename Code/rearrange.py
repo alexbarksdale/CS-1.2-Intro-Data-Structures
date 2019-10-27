@@ -11,7 +11,6 @@ https://www.geeksforgeeks.org/python-ways-to-shuffle-a-list/
 def rearrange_word(input):
     # Initializes a list
     un_arranged = list(input)
-    print(un_arranged)
 
     for word in range(len(un_arranged)):
 
@@ -21,7 +20,7 @@ def rearrange_word(input):
         # Swaps un_arranged[word] with the element at a random index
         un_arranged[word], un_arranged[arranged] = un_arranged[arranged], un_arranged[word]
 
-        # ---- Uncomment to see what's happening ----
+        # ---- Uncomment to see what's happening easier ----
         # print(un_arranged[word], un_arranged[arranged])
         # print(' '.join(un_arranged) + '.')
 

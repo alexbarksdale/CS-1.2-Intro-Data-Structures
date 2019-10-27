@@ -10,7 +10,7 @@ def load_words(word_file, amount):
     #     random_word.append(
     #         choice(open('/usr/share/dict/words', 'r').read().split()))
 
-    # print(' '.join(random_word) + '.')
+    # return ' '.join(random_word) + '.'
 
     # ? ------- [VESRION 2] -------
     with open(word_file, 'r') as file:
@@ -27,7 +27,7 @@ def load_words(word_file, amount):
     #     words = [word for word in file.read().split()]
     #     random_word = ' '.join(choice(words) for i in range(int(amount))) + '.'
 
-    #     return random_word
+    #     return ' '.join(random_word) + '.'
 
 
 if __name__ == '__main__':
