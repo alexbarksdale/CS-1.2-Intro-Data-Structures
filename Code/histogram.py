@@ -1,44 +1,67 @@
 ''' Returns: a histogram of unique words with the number of times the word appears '''
 
 
-def histogram(source_text):
-    with open(source_text, 'r') as source:
+def histogram_dict(source_text):
+    word_freq = {}
+    for word in source_text:
+        if word in word_freq:
+            word_freq[word] += 1
+        else:
+            word_freq[word] = 1
+    return word_freq
 
-        source_file = source.read().split()
 
-        # Dictionary of key-value pairs
-        word_freq = {}
-        for word in source_file:
-            if word in word_freq:
-                word_freq[word] += 1
-            else:
-                word_freq[word] = 1
-        return word_freq
+def histogram_tuple(source_text):
+    word_freq = []
+    for word in source_text:
+        word_count = 0
+        for same_word in source_text:
+            if word == same_word:
+                word_count += 1
+        if word and word_count not in word_freq:
+            # append() takes 1 parameters so put it in () to append/push the word & count together
+            word_freq.append((word, word_count))
+    return word_freq
 
-        # ? ------- [Easy way (SLOW)] -------
-        # word_freq = [source_file.count(word) for word in source_file]
-        # # print(len(word_freq), len(source_file))
+    # ? ------- [Non-algorithmic way] -------
+    # word_freq = [source_file.count(word) for word in source_file]
 
-        # # zip returns a zip object which is an iterator of tuples which pairs the words together
-        # return dict(zip(source_file, word_freq))
+    # # zip returns a zip object which is an iterator of tuples which pairs the words together
+    # return list(zip(source_file, word_freq))
+
+
+def histogram_list(source_text):
+
+    word_freq = []
+    for word in source_text:
+        word_count = 0
+        for same_word in source_text:
+            if word == same_word:
+                word_count += 1
+        if word and word_count not in word_freq:
+            # append() takes 1 parameters so put it in () to append/push the word & count together
+            word_freq.append([word, word_count])
+    return word_freq
 
 
 '''
 Sorts the word frequency.
-'Lambda' is used to define anonymous functions which are functions with no name.
+#! Bug: Doesn't sort tuple and list
+
+- sorted() returns a sorted list of specified iterable objects
+    - sorted(iterable, key=key, reverse=reverse)
+        - iterable : Required. The sequence to sort, list, dictionary, tuple
+        - key : Optional. A function to execute to decide the order
+        - reverse : Optional. A boolean. False will sort ascending, vice-versa
+- .items() is used to return the list with all dictionary keys with values
+- 'Lambda' is used to define anonymous functions which are functions with no name.
 Acknowledgement: https://www.saltycrane.com/blog/2007/09/how-to-sort-python-dictionary-by-keys/
 '''
 
 
 def sort_histo(histo):
-    for key, value in sorted(histo.items(), reverse=False, key=lambda item: item[1]):
+    for key, value in sorted(histo.items(), key=lambda word: word[1], reverse=False):
         print(f'{key} - {value}')
-
-# def sort_histo(histo):
-#     sort_freq = [(histo[key], key) for key in histo]
-#     sort_freq.sort()
-#     sort_freq.reverse()
-#     return sort_freq
 
 
 ''' Returns: the total count of words in histogram() '''
@@ -56,8 +79,25 @@ def frequency(word, histogram):
 
 
 if __name__ == '__main__':
-    source = '/Users/alexbarksdale/Dropbox/[DEV]Development/Make School/CS-1.2-Intro-Data-Structures/Code/tweetgen.txt'
 
-    histo = histogram(source)
-    # print(histo)
-    sort_histo(histo)
+    source = '/Users/alexbarksdale/Dropbox/[DEV]Development/Make School/CS-1.2-Intro-Data-Structures/Code/tweetgen.txt'
+    with open(source, 'r') as source:
+        source_file = source.read().split()
+
+    # ? ------- [Dictionary] -------
+    # histo_dict = histogram_dict(source_file)
+    # print(histo_dict)
+
+    # sort_histo(histo_dict)
+
+    # ? ------- [Tuple] -------
+    # histo_tuple = histogram_tuple(source_file)
+    # print(histo_tuple)
+
+    # sort_histo(histo_tuple)
+
+    # ? ------- [List] -------
+
+    # histo_list = histogram_list(source_file)
+    # print(histo_list)
+    # sort_histo(histo_list)
