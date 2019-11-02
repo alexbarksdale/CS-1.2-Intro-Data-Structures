@@ -1,5 +1,5 @@
 from random import randint, random
-from sys import argv
+from utils import time_it
 
 
 '''
@@ -22,18 +22,19 @@ def histogram_dict(source_text):
     return word_freq
 
 
+@time_it
 def histogram_tuple(source_text):
     word_freq = []
+    checked = []
     for word in source_text:
-        word_count = 0
-        for same_word in source_text:
-            if word == same_word:
-                word_count += 1
-        if word and word_count not in word_freq:
-            # append() takes 1 parameters so put it in () to append/push the word & count together
+        if word not in checked:
+            word_count = 0
+            for same_word in source_text:
+                if word == same_word:
+                    word_count += 1
             word_freq.append((word, word_count))
+            checked.append(word)
     return word_freq
-
     # ? ------- [Non-algorithmic way] -------
     # word_freq = [source_file.count(word) for word in source_file]
 
@@ -43,14 +44,15 @@ def histogram_tuple(source_text):
 
 def histogram_list(source_text):
     word_freq = []
+    checked = []
     for word in source_text:
-        word_count = 0
-        for same_word in source_text:
-            if word == same_word:
-                word_count += 1
-        if word and word_count not in word_freq:
-            # append() takes 1 parameters so put it in () to append/push the word & count together
+        if word not in checked:
+            word_count = 0
+            for same_word in source_text:
+                if word == same_word:
+                    word_count += 1
             word_freq.append([word, word_count])
+            checked.append(word)
     return word_freq
 
 
@@ -95,10 +97,9 @@ if __name__ == '__main__':
         source_file = source.read().split()
 
     # ? ------- [Dictionary] -------
-    histo_dict = histogram_dict(source_file)
-    args = argv[1:]
+    # histo_dict = histogram_dict(source_file)
 
-    print(histo_dict)
+    # print(histo_dict)
 
     # sort_histo(histo_dict)
     # print(sample(histo_dict, 1))
@@ -111,6 +112,6 @@ if __name__ == '__main__':
 
     # ? ------- [List] -------
 
-    # histo_list = histogram_list(source_file)
-    # print(histo_list)
+    histo_list = histogram_list(source_file)
+    print(histo_list)
     # sort_histo(histo_list)
