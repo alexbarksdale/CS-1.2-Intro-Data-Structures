@@ -1,4 +1,15 @@
-''' Returns: a histogram of unique words with the number of times the word appears '''
+from random import randint, random
+from sys import argv
+
+
+'''
+Returns: a histogram of unique words with the number of times the word appears
+
+Dictionary: INEFFICIENT for space | FAST read speed
+Tuple: EFFICIENT for space | SLOW read speed
+List: EFFICIENT for space | SLOW read speed
+
+'''
 
 
 def histogram_dict(source_text):
@@ -31,7 +42,6 @@ def histogram_tuple(source_text):
 
 
 def histogram_list(source_text):
-
     word_freq = []
     for word in source_text:
         word_count = 0
@@ -80,15 +90,18 @@ def frequency(word, histogram):
 
 if __name__ == '__main__':
 
-    source = '/Users/alexbarksdale/Dropbox/[DEV]Development/Make School/CS-1.2-Intro-Data-Structures/Code/tweetgen.txt'
+    source = 'sampletest.txt'
     with open(source, 'r') as source:
         source_file = source.read().split()
 
     # ? ------- [Dictionary] -------
-    # histo_dict = histogram_dict(source_file)
-    # print(histo_dict)
+    histo_dict = histogram_dict(source_file)
+    args = argv[1:]
+
+    print(histo_dict)
 
     # sort_histo(histo_dict)
+    # print(sample(histo_dict, 1))
 
     # ? ------- [Tuple] -------
     # histo_tuple = histogram_tuple(source_file)
