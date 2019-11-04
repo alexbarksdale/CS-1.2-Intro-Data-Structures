@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
 
-    source_file = 'Code/tweetgen.txt'
+    source_file = 'Code/sampletest.txt'
     with open(source_file, 'r') as source:
         source_file = source.read().split()
 
