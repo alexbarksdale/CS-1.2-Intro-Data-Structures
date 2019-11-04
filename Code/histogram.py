@@ -1,6 +1,4 @@
 from random import randint, random
-from utils import time_it
-
 
 '''
 Returns: a histogram of unique words with the number of times the word appears
@@ -22,7 +20,6 @@ def histogram_dict(source_text):
     return word_freq
 
 
-@time_it
 def histogram_tuple(source_text):
     word_freq = []
     checked = []
@@ -90,16 +87,16 @@ def frequency(word, histogram):
     return histogram[word]
 
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
 
-    source = 'sampletest.txt'
-    with open(source, 'r') as source:
-        source_file = source.read().split()
+#     source = 'sampletest.txt'
+#     with open(source, 'r') as source:
+#         source_file = source.read().split()
 
-    # ? ------- [Dictionary] -------
-    # histo_dict = histogram_dict(source_file)
+#     # ? ------- [Dictionary] -------
+#     histo_dict = histogram_dict(source_file)
 
-    # print(histo_dict)
+#     print(histo_dict)
 
     # sort_histo(histo_dict)
     # print(sample(histo_dict, 1))
@@ -112,6 +109,6 @@ if __name__ == '__main__':
 
     # ? ------- [List] -------
 
-    histo_list = histogram_list(source_file)
-    print(histo_list)
+    # histo_list = histogram_list(source_file)
+    # print(histo_list)
     # sort_histo(histo_list)

@@ -1,4 +1,5 @@
-from histogram import histogram_dict
+from Code.histogram import histogram_dict
+# from histogram import histogram_dict
 from random import randint
 
 
@@ -38,8 +39,8 @@ if __name__ == "__main__":
     with open(source, 'r') as source:
         source_file = source.read().split()
 
-    sample = sample_freq(histogram_dict(source_file))
-    print(sample)
+    # sample = sample_freq(histogram_dict(source_file))
+    # print(sample)
 
-    # test = test_sample_freq(histogram_dict(source_file))
-    # print(test)
+    test = test_sample_freq(histogram_dict(source_file))
+    print(test)
