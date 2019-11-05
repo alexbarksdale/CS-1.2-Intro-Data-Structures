@@ -2,7 +2,6 @@ from Code.histogram import histogram_dict
 # from histogram import histogram_dict
 from random import randint
 
-
 def sample_freq(histogram):
     # Length of the histogram based off values
     hist_length = sum(histogram.values())
@@ -20,7 +19,6 @@ def sample_freq(histogram):
 
         # print('Counter: ' + str(counter) + '\n')
 
-        # If the predicted value is <= to the counter it hit the "target" so return
         if word_predict <= counter:
             return word
 
@@ -33,14 +31,14 @@ def test_sample_freq(histogram):
 
     return histogram_dict(word_freq)
 
+# TODO: Remove after application is done
+# if __name__ == "__main__":
+#     source = 'sampletest.txt'
+#     with open(source, 'r') as source:
+#         source_file = source.read().split()
 
-if __name__ == "__main__":
-    source = 'sampletest.txt'
-    with open(source, 'r') as source:
-        source_file = source.read().split()
+#     # sample = sample_freq(histogram_dict(source_file))
+#     # print(sample)
 
-    # sample = sample_freq(histogram_dict(source_file))
-    # print(sample)
-
-    test = test_sample_freq(histogram_dict(source_file))
-    print(test)
+#     test = test_sample_freq(histogram_dict(source_file))
+#     print(test)

@@ -1,4 +1,4 @@
-from random import randint, random
+# from random import randint, random
 
 '''
 Returns: a histogram of unique words with the number of times the word appears
@@ -32,11 +32,6 @@ def histogram_tuple(source_text):
             word_freq.append((word, word_count))
             checked.append(word)
     return word_freq
-    # ? ------- [Non-algorithmic way] -------
-    # word_freq = [source_file.count(word) for word in source_file]
-
-    # # zip returns a zip object which is an iterator of tuples which pairs the words together
-    # return list(zip(source_file, word_freq))
 
 
 def histogram_list(source_text):
@@ -86,7 +81,7 @@ def unique_words(histogram):
 def frequency(word, histogram):
     return histogram[word]
 
-
+# TODO: Remove after application is done
 # if __name__ == '__main__':
 
 #     source = 'sampletest.txt'
