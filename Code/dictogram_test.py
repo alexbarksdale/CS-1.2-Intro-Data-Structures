@@ -1,5 +1,4 @@
 #!python
-
 from dictogram import Dictogram
 import unittest
 # Python 2 and 3 compatibility: unittest module renamed this assertion method
