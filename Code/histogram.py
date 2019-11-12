@@ -1,4 +1,4 @@
-# from random import randint, random
+from utils import time_it
 
 '''
 Returns: a histogram of unique words with the number of times the word appears
@@ -6,10 +6,10 @@ Returns: a histogram of unique words with the number of times the word appears
 Dictionary: INEFFICIENT for space | FAST read speed
 Tuple: EFFICIENT for space | SLOW read speed
 List: EFFICIENT for space | SLOW read speed
-
 '''
 
 
+@time_it
 def histogram_dict(source_text):
     word_freq = {}
     for word in source_text:
@@ -20,6 +20,7 @@ def histogram_dict(source_text):
     return word_freq
 
 
+@time_it
 def histogram_tuple(source_text):
     word_freq = []
     checked = []
@@ -34,6 +35,7 @@ def histogram_tuple(source_text):
     return word_freq
 
 
+@time_it
 def histogram_list(source_text):
     word_freq = []
     checked = []
@@ -81,22 +83,22 @@ def unique_words(histogram):
 def frequency(word, histogram):
     return histogram[word]
 
-# TODO: Remove after application is done
-# if __name__ == '__main__':
 
-#     source = 'sampletest.txt'
-#     with open(source, 'r') as source:
-#         source_file = source.read().split()
+# TODO: Remove after application is done
+if __name__ == '__main__':
+
+    source = 'tweetgen.txt'
+    with open(source, 'r') as source:
+        source_file = source.read().split()
 
 #     # ? ------- [Dictionary] -------
-#     histo_dict = histogram_dict(source_file)
-
-#     print(histo_dict)
+    histo_dict = histogram_dict(source_file)
+    print(histo_dict)
 
     # sort_histo(histo_dict)
     # print(sample(histo_dict, 1))
 
-    # ? ------- [Tuple] -------
+    # ? ------- [Tuple] - ------
     # histo_tuple = histogram_tuple(source_file)
     # print(histo_tuple)
 
