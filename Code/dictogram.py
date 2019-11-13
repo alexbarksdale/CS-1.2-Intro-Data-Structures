@@ -25,7 +25,7 @@ class Dictogram(dict):
         # if word in self:
         #     self[word] += count
         # else:
-        #     self[word] = count
+        #     self[word] = counts
 
         '''
         get(key, value)

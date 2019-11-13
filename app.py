@@ -6,6 +6,8 @@ import os
 
 app = Flask(__name__)
 
+#! Note: Focusing on the data structures before web
+
 
 @app.route('/')
 def index():
