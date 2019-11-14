@@ -1,33 +1,40 @@
 from random import choice, randrange
 from sys import argv
+from utils import time_it
 
 
+@time_it  # From ben's utils
 def load_words(word_file, amount):
 
     # ? ------- [VESRION 1] -------
-    # random_word = []
-    # for x in range(int(amount)):
-    #     random_word.append(
-    #         choice(open('/usr/share/dict/words', 'r').read().split()))
+    #! Benchmark with 5 words: roughly 170 ms
 
-    # return ' '.join(random_word) + '.'
+    random_word = []
+    for x in range(int(amount)):
+        random_word.append(
+            choice(open('/usr/share/dict/words', 'r').read().split()))
 
-    # ? ------- [VESRION 2] -------
-    with open(word_file, 'r') as file:
+    return ' '.join(random_word) + '.'
 
-        word = file.read().split()
-        # 'for x...' runs first. It loops through and runs 'choice(word)' then assigns the value to 'random_word'.
-        random_word = [choice(word) for x in range(int(amount))]
+    # ? ------- [VESRION 2 (FASTEST)] -------
+    #! Benchmark with 5 words: roughly 35 ms
 
-        return ' '.join(random_word) + '.'
+    # with open(word_file, 'r') as file:
+
+    #         word = file.read().split()
+    #         # 'for x...' runs first. It loops through and runs 'choice(word)' then assigns the value to 'random_word'.
+    #         random_word = [choice(word) for x in range(int(amount))]
+
+    #         return ' '.join(random_word) + '.'
 
     # ? ------- [VESRION 3] -------
+    #! Benchmark with 5 words: roughly 44 ms
 
     # with open('/usr/share/dict/words', 'r') as file:
     #     words = [word for word in file.read().split()]
     #     random_word = ' '.join(choice(words) for i in range(int(amount))) + '.'
 
-    #     return ' '.join(random_word) + '.'
+    #     return ''.join(random_word) + '.'
 
 
 if __name__ == '__main__':

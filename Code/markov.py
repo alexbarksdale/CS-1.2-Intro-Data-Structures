@@ -1,8 +1,7 @@
 from random import choice
-from utils import time_it
 # from dictogram import Dictogram
 
-
+# TODO: Set up as a class
 # class Markov(dict):
 #     def __init__(self, world_list):
 #         # Checks if there is a word_list
@@ -39,9 +38,8 @@ def ngram():
             # Creates a new list if a new gram is found
             ngrams[gram] = []
         ngrams[gram].append(text[letter + order])
-#! Under the hood reference
 
-
+#! Under the hood reference for me
 # def ngram():
 #     for letter in range(len(text) - order):
 #         gram = text[letter: letter + 3]

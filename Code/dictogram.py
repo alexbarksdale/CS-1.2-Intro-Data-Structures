@@ -1,7 +1,6 @@
 #!python
 
 from __future__ import division, print_function  # Python 2 and 3 compatibility
-from utils import time_it
 from random import randint
 
 

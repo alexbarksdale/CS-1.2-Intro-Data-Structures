@@ -1,3 +1,4 @@
+from utils import time_it
 
 '''
 Returns: a histogram of unique words with the number of times the word appears
