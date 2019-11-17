@@ -1,5 +1,6 @@
 # from Code.histogram import histogram_dict
 from histogram import histogram_dict
+from read_file import read_file
 from random import randint
 
 
@@ -36,11 +37,8 @@ def test_sample_freq(histogram):
 # TODO: Remove after application is done
 if __name__ == "__main__":
     source = 'sampletest.txt'
-    with open(source, 'r') as source:
-        source_file = source.read().split()
-
-    sample = sample_freq(histogram_dict(source_file))
+    sample = sample_freq(histogram_dict(read_file(source)))
     print(sample)
 
-    # test = test_sample_freq(histogram_dict(source_file))
+    # test = test_sample_freq(histogram_dict(read_file(source)))
     # print(test)

@@ -1,16 +1,13 @@
 from utils import time_it
 
-'''
-Returns: a histogram of unique words with the number of times the word appears
-
-Dictionary: INEFFICIENT for space | FAST read speed
-Tuple: EFFICIENT for space | SLOW read speed
-List: EFFICIENT for space | SLOW read speed
-'''
-
 
 @time_it
 def histogram_dict(source_text):
+    '''
+    Returns: a histogram of unique words with the number of times the word appears
+
+    Dictionary: INEFFICIENT for space | FAST read speed
+    '''
     word_freq = {}
     for word in source_text:
         if word in word_freq:
@@ -22,6 +19,11 @@ def histogram_dict(source_text):
 
 @time_it
 def histogram_tuple(source_text):
+    '''
+    Returns: a tuple of unique words with the number of times the word appears
+
+    Tuple: EFFICIENT for space | SLOW read speed
+    '''
     word_freq = []
     checked = []
     for word in source_text:
@@ -37,6 +39,11 @@ def histogram_tuple(source_text):
 
 @time_it
 def histogram_list(source_text):
+    '''
+    Returns: a list of unique words with the number of times the word appears
+
+    List: EFFICIENT for space | SLOW read speed
+    '''
     word_freq = []
     checked = []
     for word in source_text:
