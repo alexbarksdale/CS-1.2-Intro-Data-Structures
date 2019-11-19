@@ -52,9 +52,8 @@ class LinkedList(object):
 
     def length(self):
         """Return the length of this linked list by traversing its nodes.
-        TODO: Running time: O(???) Why and under what conditions?"""
-        # TODO: Loop through all nodes and count one for each
-        # TODO: Clean up later
+        TODO: Running time: O(???) Why and under what conditions?
+        ANS: o(n) because we don't know how many nodes are in the list"""
         node = self.head
         node_len = 0
 
@@ -66,7 +65,8 @@ class LinkedList(object):
 
     def append(self, item):
         """Insert the given item at the tail of this linked list.
-        TODO: Running time: O(???) Why and under what conditions?"""
+        TODO: Running time: O(???) Why and under what conditions?
+        ANS: o(1) because it runs through once"""
 
         # Creates a new node item with data
         new_node = Node(item)
@@ -80,7 +80,8 @@ class LinkedList(object):
 
     def prepend(self, item):
         """Insert the given item at the head of this linked list.
-        TODO: Running time: O(???) Why and under what conditions?"""
+        TODO: Running time: O(???) Why and under what conditions?
+        ANS: o(1) because it runs through once"""
 
         # Creates a new node item with data
         new_node = Node(item)
@@ -92,12 +93,12 @@ class LinkedList(object):
             new_node.next = self.head  # Assign the new node as the head
             self.head = new_node  # Sets the new_node as the head
 
-    # ? why is it called quaility
-
     def find(self, quality):
         """Return an quality from this linked list satisfying the given quality.
         TODO: Best case running time: O(???) Why and under what conditions?
-        TODO: Worst case running time: O(???) Why and under what conditions?"""
+        ANS: o(1) If we're looking for the first item
+        TODO: Worst case running time: O(???) Why and under what conditions?
+        ANS: o(n) If we don't know where the item is"""
 
         node = self.head
         while node is not None:
@@ -120,7 +121,9 @@ class LinkedList(object):
     def delete(self, item):
         """Delete the given item from this linked list, or raise ValueError.
         TODO: Best case running time: O(???) Why and under what conditions?
-        TODO: Worst case running time: O(???) Why and under what conditions?"""
+        ANS: o(1) If we're looking for the first item
+        TODO: Worst case running time: O(???) Why and under what conditions?
+        ANS: o(n) If we don't know where the item is"""
 
         node = self.head
         index = self.find_index(item)
