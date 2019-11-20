@@ -131,8 +131,7 @@ class LinkedList(object):
         if index == None:
             raise ValueError(f'Item not found: {item}')
 
-        # Head of the linked list
-        if index == 0:
+        if index == 0:  # Head of the linked list
             if node.next is not None:
                 self.head = node.next  # Removes the head
             else:
@@ -145,10 +144,35 @@ class LinkedList(object):
             node = node.next
 
         if node.next.next is not None:
-            node.next = node.next.next  # a.next = c
+            node.next = node.next.next  # EX: A B C D - a.next = c
         else:
             node.next = None  # Deleting last item in linked list
             self.tail = node
+        # node = self.head
+
+        # # Checks if the head is the item
+        # if node is not None:
+        #     if node.data == item:
+        #         self.head = node.next
+        #         node = None
+        #         return
+
+        # # Loop through the nodes for the item and keeps track of the previous node to change
+        # while node is not None:
+        #     if node.data == item:
+        #         break
+
+        #     previous_node = node
+        #     node = node.next
+
+        # # Checks if the item was in the linked list
+        # if node is None:
+        #     raise ValueError(f'Item not found: {item}')
+
+        # # Remove node from the linked list
+        # previous_node.next = node.next
+
+        # node = None
 
 
 def test_linked_list():
