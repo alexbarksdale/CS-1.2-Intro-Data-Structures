@@ -53,7 +53,7 @@ class LinkedList(object):
     def length(self):
         """Return the length of this linked list by traversing its nodes.
         TODO: Running time: O(???) Why and under what conditions?
-        ANS: o(n) because we don't know how many nodes are in the list"""
+        ANS: o(n) because we don't know how many nodes are in the list and it loops"""
         node = self.head
         node_len = 0
 
@@ -98,7 +98,7 @@ class LinkedList(object):
         TODO: Best case running time: O(???) Why and under what conditions?
         ANS: o(1) If we're looking for the first item
         TODO: Worst case running time: O(???) Why and under what conditions?
-        ANS: o(n) If we don't know where the item is"""
+        ANS: o(n) If we don't know where the item is we need to loop"""
 
         node = self.head
         while node is not None:
@@ -148,31 +148,6 @@ class LinkedList(object):
         else:
             node.next = None  # Deleting last item in linked list
             self.tail = node
-        # node = self.head
-
-        # # Checks if the head is the item
-        # if node is not None:
-        #     if node.data == item:
-        #         self.head = node.next
-        #         node = None
-        #         return
-
-        # # Loop through the nodes for the item and keeps track of the previous node to change
-        # while node is not None:
-        #     if node.data == item:
-        #         break
-
-        #     previous_node = node
-        #     node = node.next
-
-        # # Checks if the item was in the linked list
-        # if node is None:
-        #     raise ValueError(f'Item not found: {item}')
-
-        # # Remove node from the linked list
-        # previous_node.next = node.next
-
-        # node = None
 
 
 def test_linked_list():

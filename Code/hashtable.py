@@ -71,10 +71,12 @@ class HashTable(object):
         TODO: Running time: O(???) Why and under what conditions?"""
         # TODO: Find bucket where given key belongs
         # TODO: Check if key-value entry exists in bucket
-        for bucket in self.buckets:
-            for current_key, _ in bucket.items():
-                if current_key == key:
-                    return True
+
+        bucket = self.buckets[self._bucket_index(key)]
+
+        for current_key, _ in bucket.items():
+            if current_key == key:
+                return True
         return False
 
     def get(self, key):
@@ -85,11 +87,11 @@ class HashTable(object):
         # TODO: If found, return value associated with given key
         # TODO: Otherwise, raise error to tell user get failed
         # Hint: raise KeyError('Key not found: {}'.format(key))
+        bucket = self.buckets[self._bucket_index(key)]
 
-        for bucket in self.buckets:
-            for current_key, current_value in bucket.items():
-                if current_key == key:
-                    return current_value
+        for current_key, current_value in bucket.items():
+            if current_key == key:
+                return current_value
         else:
             raise KeyError(f'Key not found {key}')
 
@@ -100,6 +102,9 @@ class HashTable(object):
         # TODO: Find bucket where given key belongs
         # TODO: If found, update value associated with given key
         # TODO: Otherwise, insert given key-value entry into bucket
+        # self.buckets = number of buckets in the Hash Table
+        # self.buckets[calls hash function to calc the index
+        # of the bucket the key belongs to]
         bucket = self.buckets[self._bucket_index(key)]
 
         if self.contains(key):
