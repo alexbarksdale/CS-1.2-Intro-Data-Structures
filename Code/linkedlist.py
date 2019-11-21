@@ -66,7 +66,7 @@ class LinkedList(object):
     def append(self, item):
         """Insert the given item at the tail of this linked list.
         TODO: Running time: O(???) Why and under what conditions?
-        ANS: o(1) because it runs through once"""
+        ANS: o(1) because it runs through once and doesn't loop"""
 
         # Creates a new node item with data
         new_node = Node(item)
@@ -81,7 +81,7 @@ class LinkedList(object):
     def prepend(self, item):
         """Insert the given item at the head of this linked list.
         TODO: Running time: O(???) Why and under what conditions?
-        ANS: o(1) because it runs through once"""
+        ANS: o(1) because it runs through once and doesn't loop"""
 
         # Creates a new node item with data
         new_node = Node(item)
@@ -96,7 +96,7 @@ class LinkedList(object):
     def find(self, quality):
         """Return an quality from this linked list satisfying the given quality.
         TODO: Best case running time: O(???) Why and under what conditions?
-        ANS: o(1) If we're looking for the first item
+        ANS: o(1) If we're looking for the first item it runs once
         TODO: Worst case running time: O(???) Why and under what conditions?
         ANS: o(n) If we don't know where the item is we need to loop"""
 
@@ -108,7 +108,12 @@ class LinkedList(object):
         return None
 
     def find_index(self, item):
-        """Returns the index of the item"""
+        """
+        This wasn't apart of the starter code
+
+        Returns the index of the item
+        BEST: o(1) If the index is the first item, it only runs once
+        WORST: o(n) Not sure where the item is, so it must loop"""
         count = 0
         node = self.head
         while node is not None:
@@ -121,9 +126,9 @@ class LinkedList(object):
     def delete(self, item):
         """Delete the given item from this linked list, or raise ValueError.
         TODO: Best case running time: O(???) Why and under what conditions?
-        ANS: o(1) If we're looking for the first item
+        ANS: o(1) If we're looking for the first item it runs once
         TODO: Worst case running time: O(???) Why and under what conditions?
-        ANS: o(n) If we don't know where the item is"""
+        ANS: o(n) Because we don't know what item to delete and it uses find_index() which loops.  """
 
         node = self.head
         index = self.find_index(item)
