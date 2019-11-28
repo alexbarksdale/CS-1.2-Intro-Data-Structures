@@ -131,28 +131,25 @@ class LinkedList(object):
         ANS: o(n) Because we don't know what item to delete and it uses find_index() which loops.  """
 
         node = self.head
-        index = self.find_index(item)
 
-        if index == None:
-            raise ValueError(f'Item not found: {item}')
-
-        if index == 0:  # Head of the linked list
-            if node.next is not None:
-                self.head = node.next  # Removes the head
-            else:
-                self.head = None
-                self.tail = None
+        if node and node.data == item:
+            if self.tail == self.head:  # Handles edge case of 1 item in list
+                self.tail = node.next
+            self.head = node.next
             return
 
-        # Gets the index before the one being deleted
-        for _ in range(index-1):
+        while node and node.data != item:
+            prev_node = node  # Keeps track of the previous node
             node = node.next
 
-        if node.next.next is not None:
-            node.next = node.next.next  # EX: A B C D - a.next = c
-        else:
-            node.next = None  # Deleting last item in linked list
-            self.tail = node
+        # Checks if the item was in the linked list
+        if node is None:
+            raise ValueError(f'Item not found: {item}')
+
+        if self.tail == node:  # Handles case where node to delete is the tail
+            self.tail = prev_node
+
+        prev_node.next = node.next
 
 
 def test_linked_list():
