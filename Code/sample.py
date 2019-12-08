@@ -27,9 +27,8 @@ def test_sample_freq(histogram):
     return histogram_dict(word_freq)
 
 
-# TODO: Remove after application is done
 if __name__ == "__main__":
-    source = 'sampletest.txt'
+    source = 'tweetgen.txt'
     sample = sample_freq(histogram_dict(read_file(source)))
     print(sample)
 

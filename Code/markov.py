@@ -1,6 +1,5 @@
 import re
 from random import choice
-from read_file import read_file
 
 
 class Markov(dict):
@@ -8,11 +7,11 @@ class Markov(dict):
 
         if source_file:
             self.word_list = source_file
-            self.markov = self.gen_markov(self.word_list)
+            self.markov = self.gen_markov()
         else:
             raise ValueError('No source file found')
 
-    def gen_markov(self, word_list):
+    def gen_markov(self):
         '''
         Generates a markov chain
         @param: word_list - A source for a body of text
@@ -20,8 +19,8 @@ class Markov(dict):
         markov_dict = {}
 
         # Last character not included
-        for i, curr_word in enumerate(word_list[:-1]):
-            next_word = word_list[i + 1]
+        for i, curr_word in enumerate(self.word_list[:-1]):
+            next_word = self.word_list[i + 1]
 
             if curr_word in markov_dict:
                 markov_dict[curr_word].append(next_word)

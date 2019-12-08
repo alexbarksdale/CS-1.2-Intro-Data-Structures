@@ -20,17 +20,13 @@ class Dictogram(dict):
                 self.add_count(word)
 
     def add_count(self, word, count=1):
-        """Increase frequency count of given word by given count amount."""
-        # if word in self:
-        #     self[word] += count
-        # else:
-        #     self[word] = counts
+        """Increase frequency count of given word by given count amount.
 
-        '''
         get(key, value)
            - key: key to be searched (word)
            - value: RETRUNED if the KEY is NOT found
-        '''
+        """
+
         self[word] = self.get(word, 0) + count
 
         self.types = len(self)
