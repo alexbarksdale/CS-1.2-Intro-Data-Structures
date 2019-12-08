@@ -1,78 +1,50 @@
 from random import choice
-# from dictogram import Dictogram
-
-# TODO: Set up as a class
-# class Markov(dict):
-#     def __init__(self, world_list):
-#         # Checks if there is a word_list
-#         if word_list:
-#             self.world_list = world_list
-#         else:
-#             print('Add default text later.')
-
-# text = "the theremin is theirs, ok? yes, it is. this is a a theremin."
-source = 'markov_test.txt'
-with open(source, 'r') as txt_file:
-    text = txt_file.read()
-
-order = 6
-ngrams = {}
-
-'''
-N-Gram: Contiguous (neighboring) sequqnce of characaters or words.
-    » Order: Looks for an (n)gram in a corpus
-        ∆ Ex - Bi-gram, n-grams of two or zTri-grams, n-grams of three
-        ∆ Tri-gram Example:
-            - Corpus: "The dog crossed the street"
-            - Tri-gram: The, he_, e_d, dog, og_, g_c, ....
-                » Goal: What are the possible characters that follows: The or he_
-'''
+from read_file import read_file
 
 
-def ngram():
-    for letter in range(len(text) - order):
-        # Pulls out the (n)gram, n = order
-        gram = text[letter: letter + order]
+class Markov(dict):
+    def __init__(self, source_file=None):
 
-        if gram not in ngrams:
-            # Creates a new list if a new gram is found
-            ngrams[gram] = []
-        ngrams[gram].append(text[letter + order])
+        if source_file:
+            self.word_list = read_file(source_file)
+            self.markov = self.gen_markov(self.word_list)
+        else:
+            raise ValueError('No source file found')
 
-#! Under the hood reference for me
-# def ngram():
-#     for letter in range(len(text) - order):
-#         gram = text[letter: letter + 3]
+    def gen_markov(self, word_list):
+        '''
+        Generates a markov chain
+        @param: word_list - A source for a body of text
+        '''
+        markov_dict = {}
 
-#         if gram not in ngrams:
-#             ngrams[gram] = []
-#         ngrams[gram].append(text[letter + 3])
-#     print(ngrams)
+        # Last character not included
+        for i, curr_word in enumerate(word_list[:-1]):
+            next_word = word_list[i + 1]
+
+            if curr_word in markov_dict:
+                markov_dict[curr_word].append(next_word)
+            else:
+                markov_dict[curr_word] = [next_word]
+
+        return markov_dict
+
+    def gen_sentence(self, amt=15):
+        '''
+        Generate a setence based off a markov chain
+        @param: amt - Amount of words in the sentence
+        '''
+        # Picks a random first word to start the sentence
+        start = choice(self.word_list)
+
+        sentence = [start]
+
+        for i in range(amt):
+            sentence.append(choice(self.markov[sentence[- 1]]))
+
+        return print(' '.join(sentence) + '.')
 
 
-def markov():
-    # Gets the first word
-    currentGram = text[0: order]
-    result = currentGram
-
-    for i in range(100):
-        possibilities = ngrams[currentGram]
-
-        # Ends if there are no possibilities
-        if not possibilities:
-            print('something went wrong')
-            break
-
-        nextChar = choice(possibilities)
-        result += nextChar
-
-        txt_len = len(result)
-        # Last (order) of characters in the text
-        currentGram = result[txt_len - order: txt_len]
-
-    print(result)
-
-
-ngram()
-# print(ngrams)
-markov()
+if __name__ == "__main__":
+    markov = Markov('yoda.txt')
+    markov.gen_sentence()
