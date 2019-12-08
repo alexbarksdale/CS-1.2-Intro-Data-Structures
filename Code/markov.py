@@ -1,3 +1,4 @@
+import re
 from random import choice
 from read_file import read_file
 
@@ -6,7 +7,7 @@ class Markov(dict):
     def __init__(self, source_file=None):
 
         if source_file:
-            self.word_list = read_file(source_file)
+            self.word_list = source_file
             self.markov = self.gen_markov(self.word_list)
         else:
             raise ValueError('No source file found')
@@ -46,5 +47,11 @@ class Markov(dict):
 
 
 if __name__ == "__main__":
-    markov = Markov('yoda.txt')
+    source = 'tweetgen.txt'
+    with open(source, 'r') as file:
+        source_file = file.read().lower()
+        filtered_file = re.sub(r'[^a-zA-Z\s]', '', source_file)
+        filtered_file = filtered_file.replace('\n', ' ').split()
+
+    markov = Markov(filtered_file)
     markov.gen_sentence()
