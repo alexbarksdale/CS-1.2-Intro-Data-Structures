@@ -1,4 +1,4 @@
-from utils import time_it
+from practice.utils import time_it
 
 
 @time_it
@@ -93,8 +93,7 @@ def frequency(word, histogram):
 
 # TODO: Remove after application is done
 if __name__ == '__main__':
-
-    source = 'tweetgen.txt'
+    source = 'text_files/tweetgen.txt'
     with open(source, 'r') as source:
         source_file = source.read().split()
 

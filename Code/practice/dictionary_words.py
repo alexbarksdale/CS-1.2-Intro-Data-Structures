@@ -1,7 +1,6 @@
 from random import choice, randrange
-from read_file import read_file
+from practice.utils import time_it, read_file
 from sys import argv
-from utils import time_it
 
 
 @time_it  # From ben's utils

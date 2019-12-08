@@ -1,4 +1,5 @@
 import time
+import re
 
 
 def time_it(func):
@@ -19,3 +20,11 @@ def time_it(func):
         return result
 
     return wrapper
+
+
+def read_file(source):
+    with open(source, 'r') as file:
+        source_file = file.read().lower()
+        filtered_file = re.sub(r'[^a-zA-Z\s]', '', source_file)
+
+        return filtered_file.replace('\n', ' ')

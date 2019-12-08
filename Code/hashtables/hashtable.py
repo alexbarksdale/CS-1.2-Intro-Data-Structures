@@ -1,4 +1,5 @@
-from linkedlist import LinkedList
+# from linkedlist import LinkedList
+from linkedlists.linkedlist import LinkedList
 
 
 class HashTable(object):

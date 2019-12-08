@@ -46,7 +46,7 @@ class Markov(dict):
 
 
 if __name__ == "__main__":
-    source = 'tweetgen.txt'
+    source = 'text_files/tweetgen.txt'
     with open(source, 'r') as file:
         source_file = file.read().lower()
         filtered_file = re.sub(r'[^a-zA-Z\s]', '', source_file)

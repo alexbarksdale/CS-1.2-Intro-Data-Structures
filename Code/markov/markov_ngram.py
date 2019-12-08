@@ -1,5 +1,5 @@
 from random import choice
-from read_file import read_file
+from practice.utils import read_file
 
 
 class Markov(dict):
@@ -15,7 +15,6 @@ class Markov(dict):
             self.n_markov = self.gen_ngram_markov()
         else:
             raise ValueError('No source file found')
-
     '''
     N-Gram: Contiguous (neighboring) sequence of characaters or words.
         » Order: Looks for an (n)gram in a corpus
@@ -85,4 +84,4 @@ class Markov(dict):
 
 
 if __name__ == "__main__":
-    Markov('tweetgen.txt')
+    Markov('text_files/tweetgen.txt')
