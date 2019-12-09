@@ -1,5 +1,10 @@
+# ---------- App.py Connection ----------
+# --- Comment out if not in use ---
+from Code.utils import read_file
 from random import choice
-from practice.utils import read_file
+# ---------- Command Line Connection ----------
+# --- Comment out if not in use ---
+# from utils import read_file
 
 
 class Markov(dict):
@@ -60,7 +65,7 @@ class Markov(dict):
         while True:
             # Ends if there are no possibilities
             if currentGram not in self.ngrams_dict:
-                return print(result[:len(result)-1] + '.')
+                return result[:len(result)-1] + '.'
 
             # Possible next characters based off the current gram
             possibilities = self.ngrams_dict[currentGram]
@@ -84,4 +89,4 @@ class Markov(dict):
 
 
 if __name__ == "__main__":
-    Markov('text_files/tweetgen.txt')
+    Markov('tweetgen.txt')

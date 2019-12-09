@@ -1,4 +1,9 @@
-from practice.utils import time_it
+# ---------- App.py Connection ----------
+# --- Comment out if not in use ---
+from Code.utils import time_it
+# ---------- Command Line Connection ----------
+# --- Comment out if not in use ---
+# from utils import time_it
 
 
 @time_it
@@ -93,7 +98,7 @@ def frequency(word, histogram):
 
 # TODO: Remove after application is done
 if __name__ == '__main__':
-    source = 'text_files/tweetgen.txt'
+    source = 'small_sample.txt'
     with open(source, 'r') as source:
         source_file = source.read().split()
 

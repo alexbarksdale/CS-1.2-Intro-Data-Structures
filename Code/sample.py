@@ -1,7 +1,12 @@
-# from Code.histogram import histogram_dict
-from histogram import histogram_dict
-from read_file import read_file
+# ---------- App.py Connection ----------
+# --- Comment out if not in use ---
 from random import randint
+from Code.histogram import histogram_dict
+from Code.utils import read_file
+# ---------- Command Line Connection ----------
+# --- Comment out if not in use ---
+# from histogram import histogram_dict
+# from utils import read_file
 
 
 def sample_freq(histogram):

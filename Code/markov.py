@@ -42,11 +42,11 @@ class Markov(dict):
         for i in range(amt):
             sentence.append(choice(self.markov[sentence[- 1]]))
 
-        return print(' '.join(sentence) + '.')
+        return ' '.join(sentence) + '.'
 
 
 if __name__ == "__main__":
-    source = 'text_files/tweetgen.txt'
+    source = 'tweetgen.txt'
     with open(source, 'r') as file:
         source_file = file.read().lower()
         filtered_file = re.sub(r'[^a-zA-Z\s]', '', source_file)
