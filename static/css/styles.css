@@ -85,7 +85,6 @@ p {
     background-color: #fff;
     text-shadow: none;
     transition: all .3s ease-in-out;
-
 }
 
 /* ---------------------------- */
@@ -148,7 +147,6 @@ p {
 /* ---------------------------- */
 /* ACCOMPLISHMENT PROPERTIES */
 /* ---------------------------- */
-
 .accomplishment {
     display: flex;
     justify-content: center;
@@ -188,6 +186,27 @@ ul {
 
 .accomplishment-content li {
     font-size: 18px;
+}
+
+.btn-contribute {
+    position: relative;
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    background-color: #3c3b49;
+    letter-spacing: 1px;
+    transition: all .3s ease-in-out;
+}
+
+.btn-contribute a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-contribute:hover {
+    color: #fff;
+    background-color: #575664;
+    transition: all .3s ease-in-out;
 }
 
 @media(max-width: 990px) {
