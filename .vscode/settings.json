@@ -1,4 +1,4 @@
 {
-    "python.pythonPath": "venv/bin/python",
+    "python.pythonPath": "/Users/alexbarksdale/Dropbox/[DEV]Development/MSProjects/TweetGen/venv/bin/python2.7",
     "python.linting.enabled": true
 }
