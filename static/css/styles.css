@@ -1,5 +1,5 @@
 /* ---------------------------- */
-/* Global Properties */
+/* GLOBAL PROPERTIES */
 /* ---------------------------- */
 * {
     font-family: 'Fira Sans', sans-serif;
@@ -9,24 +9,36 @@ h1 {
     margin-bottom: 0 !important;
 }
 
+p {
+    margin: 0;
+}
+
 /* ---------------------------- */
-/* Banner Properties */
+/* BANNER PROPERTIES */
 /* ---------------------------- */
 .header-banner {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: #3c3c49;
     height: 70px;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 0 #00000073;
 }
 
 .header-banner h1 {
     font-family: 'Roboto Slab', serif;
     color: #fff;
     font-size: 19px;
-    letter-spacing: 2px;
-    text-shadow: 0 2px 0 #00000073;
     margin: 0px 15px;
+}
+
+.header-banner p {
+    font-family: 'Roboto Slab', serif;
+    color: #fff;
 }
 
 .fa-democrat {
@@ -38,7 +50,7 @@ h1 {
 }
 
 /* ---------------------------- */
-/* Header Properties */
+/* HEADER PROPERTIES */
 /* ---------------------------- */
 .header-content {
     height: 100%;
@@ -56,9 +68,8 @@ h1 {
 
 .header-content button {
     color: #fff;
-    font-size: 20x;
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     border: 2.3px solid #fff;
     text-transform: uppercase;
     text-shadow: 0 2px 4px #5a5a5a;
@@ -78,7 +89,7 @@ h1 {
 }
 
 /* ---------------------------- */
-/* Tweetgen Properties */
+/* TWEETGEN PROPERTIES */
 /* ---------------------------- */
 .tweetgen-container {
     background: url('/static/img/bg.png') no-repeat;
@@ -87,13 +98,16 @@ h1 {
 }
 
 .tweetgen-content {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
     padding: 35px;
     background-color: #9c2a3a;
     border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     margin: -106px 103px;
+    position: absolute;
+    z-index: 1;
 }
 
 .tweetgen-content h4 {
@@ -129,4 +143,63 @@ h1 {
     background-color: #c74758;
     padding: 7px 50px;
     transition: all .3s ease-in-out;
+}
+
+/* ---------------------------- */
+/* ACCOMPLISHMENT PROPERTIES */
+/* ---------------------------- */
+
+.accomplishment {
+    display: flex;
+    justify-content: center;
+
+    background: url('/static/img/goals.jpg') no-repeat;
+    background-size: cover;
+    min-height: 500px;
+}
+
+.accomplishment:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: #ffffffcc
+}
+
+.accomplishment-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 78px;
+}
+
+.accomplishment-content h3,
+ul {
+    color: #4e4e4e;
+    position: relative;
+}
+
+.accomplishment-content h3 {
+    text-transform: uppercase;
+}
+
+.accomplishment-content li {
+    font-size: 18px;
+}
+
+@media(max-width: 990px) {
+    .tweetgen-content {
+        margin: -106px 0px;
+    }
+}
+
+@media(max-width: 574px) {
+
+    /* Don't do this at home */
+    .container {
+        padding-left: 0;
+    }
 }
