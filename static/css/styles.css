@@ -1,0 +1,132 @@
+/* ---------------------------- */
+/* Global Properties */
+/* ---------------------------- */
+* {
+    font-family: 'Fira Sans', sans-serif;
+}
+
+h1 {
+    margin-bottom: 0 !important;
+}
+
+/* ---------------------------- */
+/* Banner Properties */
+/* ---------------------------- */
+.header-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3c3c49;
+    height: 70px;
+}
+
+.header-banner h1 {
+    font-family: 'Roboto Slab', serif;
+    color: #fff;
+    font-size: 19px;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 0 #00000073;
+    margin: 0px 15px;
+}
+
+.fa-democrat {
+    margin: 0px 15px;
+}
+
+.fa-democrat:first-child {
+    transform: scaleX(-1);
+}
+
+/* ---------------------------- */
+/* Header Properties */
+/* ---------------------------- */
+.header-content {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 46px;
+}
+
+.header-content h1 {
+    color: #fff;
+    text-shadow: 0 2px 0px #888888;
+}
+
+.header-content button {
+    color: #fff;
+    font-size: 20x;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border: 2.3px solid #fff;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px #5a5a5a;
+
+    align-self: flex-start;
+    margin-top: 20px;
+    transition: all .3s ease-in-out;
+
+}
+
+.header-content button:hover {
+    color: #3c3c49;
+    background-color: #fff;
+    text-shadow: none;
+    transition: all .3s ease-in-out;
+
+}
+
+/* ---------------------------- */
+/* Tweetgen Properties */
+/* ---------------------------- */
+.tweetgen-container {
+    background: url('/static/img/bg.png') no-repeat;
+    background-size: cover;
+    height: 67%;
+}
+
+.tweetgen-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 35px;
+    background-color: #9c2a3a;
+    border-radius: 8px;
+    margin: -106px 103px;
+}
+
+.tweetgen-content h4 {
+    color: #e85c6f;
+    align-self: flex-start;
+    font-size: 15px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 0 #7d1d2a;
+
+}
+
+.tweetgen-content h1 {
+    color: #fff;
+    font-size: 25px;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 0 #848484;
+}
+
+.tweetgen-content button {
+    color: #ff9898;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    background-color: #bd3d4e;
+    padding: 7px 20px;
+    transition: all .3s ease-in-out;
+    margin-top: 20px;
+}
+
+.tweetgen-content button:hover {
+    color: #ffd5d5;
+    background-color: #c74758;
+    padding: 7px 50px;
+    transition: all .3s ease-in-out;
+}

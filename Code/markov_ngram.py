@@ -10,7 +10,7 @@ from random import choice
 class Markov(dict):
     '''Acknowledgement: Received help from github@noahkrause to improve the ngram functionality'''
 
-    def __init__(self, source_file=None, order=6):
+    def __init__(self, source_file=None, order=10):
         self.order = order  # The order of the (n)gram
         self.ngrams_dict = {}  # Contains a dict. of (n)grams
 

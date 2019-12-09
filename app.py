@@ -9,8 +9,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    markov = Markov('Code/tweetgen.txt').n_markov
-    return render_template('index.html', markov=markov)
+    ngram_markov = Markov('Code/tweetgen.txt').n_markov
+    return render_template('index.html', ngram_markov=ngram_markov)
 
 
 if __name__ == '__main__':
