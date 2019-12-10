@@ -28,6 +28,7 @@ class Markov(dict):
                 - Corpus: "The dog crossed the street"
                 - Tri-gram: The, he_, e_d, dog, og_, g_c, ....
                     » Goal: What are the possible characters that follows: The or he_
+                    and pick randomly from the possibilities
     '''
 
     def gen_ngram(self):
@@ -50,7 +51,9 @@ class Markov(dict):
             self.ngrams_dict[gram].append(letter)
 
     def gen_ngram_markov(self):
-        '''Generates a sentence based off the markov-chain using ngram'''
+        '''Generates a sentence based off the markov-chain using ngrams'''
+        
+        # Gets one FULL word rather than a random word cut off from the ngram
         availableWords = [word for word in self.word_list.split()
                           if len(word) == self.order]
 
@@ -78,7 +81,7 @@ class Markov(dict):
             currentGram = result[txt_len - self.order: txt_len]
 
             # Runs until (i) amount and the next char is a space
-            if (i > 100 and nextChar is ' '):
+            if (i > 150 and nextChar is ' '):
                 break
             i += 1
 

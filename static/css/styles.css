@@ -2,223 +2,221 @@
 /* GLOBAL PROPERTIES */
 /* ---------------------------- */
 * {
-    font-family: 'Fira Sans', sans-serif;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 h1 {
-    margin-bottom: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 p {
-    margin: 0;
+  margin: 0;
 }
 
 /* ---------------------------- */
 /* BANNER PROPERTIES */
 /* ---------------------------- */
 .header-banner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #3c3c49;
-    height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #3c3c49;
+  height: 70px;
 
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 0 2px 0 #00000073;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 0 #00000073;
 }
 
 .header-banner h1 {
-    font-family: 'Roboto Slab', serif;
-    color: #fff;
-    font-size: 19px;
-    margin: 0px 15px;
+  font-family: 'Roboto Slab', serif;
+  color: #fff;
+  font-size: 19px;
+  margin: 0px 15px;
 }
 
 .header-banner p {
-    font-family: 'Roboto Slab', serif;
-    color: #fff;
+  font-family: 'Roboto Slab', serif;
+  color: #fff;
 }
 
 .fa-democrat {
-    margin: 0px 15px;
+  margin: 0px 15px;
 }
 
 .fa-democrat:first-child {
-    transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 /* ---------------------------- */
 /* HEADER PROPERTIES */
 /* ---------------------------- */
 .header-content {
-    height: 100%;
+  height: 100%;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 46px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 46px;
 }
 
 .header-content h1 {
-    color: #fff;
-    text-shadow: 0 2px 0px #888888;
+  color: #fff;
+  text-shadow: 0 2px 0px #888888;
 }
 
 .header-content button {
-    color: #fff;
-    font-weight: 500;
-    letter-spacing: 2px;
-    border: 2.3px solid #fff;
-    text-transform: uppercase;
-    text-shadow: 0 2px 4px #5a5a5a;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 2px;
+  border: 2.3px solid #fff;
+  text-transform: uppercase;
+  text-shadow: 0 2px 4px #5a5a5a;
 
-    align-self: flex-start;
-    margin-top: 20px;
-    transition: all .3s ease-in-out;
-
+  align-self: flex-start;
+  margin-top: 20px;
+  transition: all 0.3s ease-in-out;
 }
 
 .header-content button:hover {
-    color: #3c3c49;
-    background-color: #fff;
-    text-shadow: none;
-    transition: all .3s ease-in-out;
+  color: #3c3c49;
+  background-color: #fff;
+  text-shadow: none;
+  transition: all 0.3s ease-in-out;
 }
 
 /* ---------------------------- */
 /* TWEETGEN PROPERTIES */
 /* ---------------------------- */
 .tweetgen-container {
-    background: url('/static/img/bg.png') no-repeat;
-    background-size: cover;
-    height: 67%;
+  background: url('/static/img/bg.png') no-repeat;
+  background-size: cover;
+  height: 67%;
 }
 
 .tweetgen-content {
-    padding: 35px;
-    background-color: #9c2a3a;
-    border-radius: 8px;
+  padding: 35px;
+  background-color: #9c2a3a;
+  border-radius: 8px;
 
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin: -106px 0px;
-    position: absolute;
-    z-index: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: -106px 0px;
+  position: absolute;
+  z-index: 1;
 }
 
 .tweetgen-content h4 {
-    color: #e85c6f;
-    align-self: flex-start;
-    font-size: 15px;
-    text-transform: uppercase;
-    text-shadow: 0 2px 0 #7d1d2a;
-
+  color: #e85c6f;
+  align-self: flex-start;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 0 #7d1d2a;
 }
 
 .tweetgen-content h1 {
-    color: #fff;
-    font-size: 25px;
-    letter-spacing: 1px;
-    text-shadow: 0 2px 0 #848484;
+  color: #fff;
+  font-size: 25px;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 0 #848484;
 }
 
 .tweetgen-content button {
-    color: #ff9898;
-    font-size: 20px;
-    text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: 1px;
-    background-color: #bd3d4e;
-    padding: 7px 20px;
-    transition: all .3s ease-in-out;
-    margin-top: 20px;
+  color: #ff9898;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+  background-color: #bd3d4e;
+  padding: 7px 20px;
+  transition: all 0.3s ease-in-out;
+  margin-top: 20px;
 }
 
 .tweetgen-content button:hover {
-    color: #ffd5d5;
-    background-color: #c74758;
-    padding: 7px 50px;
-    transition: all .3s ease-in-out;
+  color: #ffd5d5;
+  background-color: #c74758;
+  padding: 7px 50px;
+  transition: all 0.3s ease-in-out;
 }
 
 /* ---------------------------- */
 /* ACCOMPLISHMENT PROPERTIES */
 /* ---------------------------- */
 .accomplishment {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 
-    background: url('/static/img/goals.jpg') no-repeat;
-    background-size: cover;
-    min-height: 500px;
+  background: url('/static/img/goals.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 500px;
 }
 
 .accomplishment:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background: #ffffffcc
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: #ffffffcc;
 }
 
 .accomplishment-content {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 78px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 78px;
 }
 
 .accomplishment-content h3,
 ul {
-    color: #4e4e4e;
-    position: relative;
+  color: #4e4e4e;
+  position: relative;
 }
 
 .accomplishment-content h3 {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .accomplishment-content li {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .btn-contribute {
-    position: relative;
-    color: #fff;
-    font-size: 20px;
-    text-transform: uppercase;
-    background-color: #3c3b49;
-    letter-spacing: 1px;
-    transition: all .3s ease-in-out;
+  position: relative;
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+  background-color: #3c3b49;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
 }
 
 .btn-contribute a {
-    color: #fff;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 
 .btn-contribute:hover {
-    color: #fff;
-    background-color: #575664;
-    transition: all .3s ease-in-out;
+  color: #fff;
+  background-color: #575664;
+  transition: all 0.3s ease-in-out;
 }
 
-@media(max-width: 990px) {
-    .tweetgen-content {
-        margin: -106px 0px;
-    }
+@media (max-width: 990px) {
+  .tweetgen-content {
+    margin: -106px 0px;
+  }
 }
 
-@media(max-width: 574px) {
-
-    /* Don't do this at home */
-    .container {
-        padding-left: 0;
-    }
+@media (max-width: 574px) {
+  /* Don't do this at home */
+  .container {
+    padding-left: 0;
+  }
 }

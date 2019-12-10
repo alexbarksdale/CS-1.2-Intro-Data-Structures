@@ -1,13 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for
 from Code.markov_ngram import *
+from random import choice
 import re
 import os
-
 
 app = Flask(__name__)
 # Stores the markov chain
 markov = Markov('Code/tweetgen.txt')
-
 
 @app.route('/')
 def index():
