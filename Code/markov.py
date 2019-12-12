@@ -1,5 +1,12 @@
+from __future__ import division, print_function  # Python 2 and 3 compatibility
 import re
 from random import choice
+
+'''
+===================================
+! Please grade markov_ngram.py !
+===================================
+'''
 
 
 class Markov(dict):
@@ -42,11 +49,14 @@ class Markov(dict):
         for i in range(amt):
             sentence.append(choice(self.markov[sentence[- 1]]))
 
+        # View sentence
+        print(' '.join(sentence) + '.')
+
         return ' '.join(sentence) + '.'
 
 
 if __name__ == "__main__":
-    source = 'tweetgen.txt'
+    source = 'medium_sample.txt'
     with open(source, 'r') as file:
         source_file = file.read().lower()
         filtered_file = re.sub(r'[^a-zA-Z\s]', '', source_file)

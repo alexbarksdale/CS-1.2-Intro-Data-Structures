@@ -1,16 +1,18 @@
+from __future__ import division, print_function  # Python 2 and 3 compatibility
+from random import choice
+
 # ---------- App.py Connection ----------
 # --- Comment out if not in use ---
-from Code.utils import read_file
-from random import choice
+# from Code.utils import read_file
 # ---------- Command Line Connection ----------
 # --- Comment out if not in use ---
-# from utils import read_file
+from utils import read_file
 
 
 class Markov(dict):
     '''Acknowledgement: Received help from github@noahkrause to improve the ngram functionality'''
 
-    def __init__(self, source_file=None, order=10):
+    def __init__(self, source_file=None, order=5):
         self.order = order  # The order of the (n)gram
         self.ngrams_dict = {}  # Contains a dict. of (n)grams
 
@@ -22,12 +24,12 @@ class Markov(dict):
             raise ValueError('No source file found')
     '''
     N-Gram: Contiguous (neighboring) sequence of characaters or words.
-        » Order: Looks for an (n)gram in a corpus
-            ∆ Ex - Bi-gram, n-grams of two or Tri-grams, n-grams of three
-            ∆ Tri-gram Example:
+        - Order: Looks for an (n)gram in a corpus
+            Ex - Bi-gram, n-grams of two or Tri-grams, n-grams of three
+            - Tri-gram Example:
                 - Corpus: "The dog crossed the street"
                 - Tri-gram: The, he_, e_d, dog, og_, g_c, ....
-                    » Goal: What are the possible characters that follows: The or he_
+                    - Goal: What are the possible characters that follows: The or he_
                     and pick randomly from the possibilities
     '''
 
@@ -49,10 +51,12 @@ class Markov(dict):
                 letter = ' '
 
             self.ngrams_dict[gram].append(letter)
+        # View the dict.
+        # print(self.ngrams_dict)
 
     def gen_ngram_markov(self):
         '''Generates a sentence based off the markov-chain using ngrams'''
-        
+
         # Gets one FULL word rather than a random word cut off from the ngram
         availableWords = [word for word in self.word_list.split()
                           if len(word) == self.order]
@@ -62,6 +66,8 @@ class Markov(dict):
             availableWords.append(self.word_list[:self.order])
 
         currentGram = choice(availableWords)
+
+        # Stores the sentence
         result = currentGram.capitalize()
 
         i = 0
@@ -86,10 +92,10 @@ class Markov(dict):
             i += 1
 
         # # View the random sentence
-        # print(result[:len(result)-1] + '.')
+        print(result[:len(result)-1] + '.')
 
         return result[:len(result)-1] + '.'
 
 
 if __name__ == "__main__":
-    Markov('tweetgen.txt')
+    Markov('medium_sample.txt')

@@ -1,9 +1,10 @@
+from __future__ import division, print_function  # Python 2 and 3 compatibility
 # ---------- App.py Connection ----------
 # --- Comment out if not in use ---
-from Code.utils import time_it
+# from Code.utils import time_it
 # ---------- Command Line Connection ----------
 # --- Comment out if not in use ---
-# from utils import time_it
+from utils import time_it
 
 
 @time_it

@@ -1,12 +1,12 @@
 # ---------- App.py Connection ----------
 # --- Comment out if not in use ---
 from random import randint
-from Code.histogram import histogram_dict
-from Code.utils import read_file
+# from Code.histogram import histogram_dict
+# from Code.utils import read_file
 # ---------- Command Line Connection ----------
 # --- Comment out if not in use ---
-# from histogram import histogram_dict
-# from utils import read_file
+from histogram import histogram_dict
+from utils import read_file
 
 
 def sample_freq(histogram):
@@ -33,9 +33,9 @@ def test_sample_freq(histogram):
 
 
 if __name__ == "__main__":
-    source = 'tweetgen.txt'
-    sample = sample_freq(histogram_dict(read_file(source)))
-    print(sample)
+    source = 'small_sample.txt'
+    # sample = sample_freq(histogram_dict(read_file(source)))
+    # print(sample)
 
-    # test = test_sample_freq(histogram_dict(read_file(source)))
-    # print(test)
+    test = test_sample_freq(histogram_dict(read_file(source)))
+    print(test)
